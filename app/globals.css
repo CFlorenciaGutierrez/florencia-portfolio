@@ -1,0 +1,182 @@
+@import 'tailwindcss';
+
+:root {
+  color-scheme: dark;
+  --background: #07111f;
+  --surface: #0d1b2f;
+  --surface-soft: #10233d;
+  --foreground: #e6f0ff;
+  --muted: #91a4bd;
+  --accent: #5eead4;
+  --accent-strong: #22d3ee;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at 20% 0%,
+      rgba(34, 211, 238, 0.12),
+      transparent 34rem
+    ),
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(94, 234, 212, 0.1),
+      transparent 32rem
+    ),
+    var(--background);
+  color: var(--foreground);
+  font-family:
+    var(--font-inter),
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
+}
+
+::selection {
+  background: rgba(94, 234, 212, 0.28);
+  color: #ffffff;
+}
+
+a,
+button {
+  outline-color: var(--accent);
+}
+
+a {
+  transition:
+    color 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease,
+    opacity 180ms ease;
+}
+
+a:not([class*='rounded']) {
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0 1px;
+  transition:
+    color 180ms ease,
+    background-size 220ms ease;
+}
+
+a:not([class*='rounded']):hover {
+  background-size: 100% 1px;
+}
+
+.section-shell {
+  width: min(100% - 2rem, 1120px);
+  margin-inline: auto;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.card-border {
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  background: rgba(13, 27, 47, 0.78);
+  box-shadow: 0 24px 70px rgba(2, 6, 23, 0.18);
+}
+
+.custom-cursor-ring,
+.custom-cursor-dot {
+  pointer-events: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 80;
+  border-radius: 9999px;
+  translate: -50% -50%;
+}
+
+.custom-cursor-ring {
+  height: 2.75rem;
+  width: 2.75rem;
+  border: 1px solid rgba(94, 234, 212, 0.58);
+  background: rgba(94, 234, 212, 0.04);
+  box-shadow: 0 0 34px rgba(94, 234, 212, 0.14);
+  transition:
+    height 180ms ease,
+    width 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease;
+}
+
+.custom-cursor-dot {
+  height: 0.35rem;
+  width: 0.35rem;
+  background: var(--accent);
+}
+
+html[data-custom-cursor] body {
+  cursor: none;
+}
+
+html[data-custom-cursor] a,
+html[data-custom-cursor] button {
+  cursor: none;
+}
+
+.project-list:has(.project-card:hover) .project-card:not(:hover) {
+  opacity: 0.48;
+}
+
+.project-card {
+  transition:
+    opacity 240ms ease,
+    transform 240ms ease,
+    border-color 240ms ease,
+    background-color 240ms ease;
+}
+
+.project-card .project-preview-media {
+  transition: transform 360ms ease;
+}
+
+.project-card .project-title {
+  transition: color 220ms ease;
+}
+
+.project-card:hover .project-preview-media,
+.project-card:focus-within .project-preview-media {
+  transform: scale(1.035);
+}
+
+.project-card:hover .project-title,
+.project-card:focus-within .project-title {
+  color: var(--accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .custom-cursor-ring,
+  .custom-cursor-dot {
+    display: none;
+  }
+
+  .project-card:hover .project-preview-media,
+  .project-card:focus-within .project-preview-media {
+    transform: none;
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "nav": {
+    "aria": "Main navigation",
+    "about": "About",
+    "work": "Work",
+    "caseStudies": "UX/UI",
+    "skills": "Skills",
+    "contact": "Contact",
+    "open": "Open menu",
+    "close": "Close menu"
+  },
+  "hero": {
+    "eyebrow": "Hi, I am",
+    "name": "Florencia Gutierrez",
+    "title": "Full Stack Developer & UX/UI Designer",
+    "description": "I design and develop digital products by combining user experience, clear interfaces and functional web solutions.",
+    "viewProjects": "View projects",
+    "downloadCv": "Download CV",
+    "contact": "Contact me"
+  },
+  "about": {
+    "eyebrow": "01 / About",
+    "title": "I build digital experiences with a product-minded approach.",
+    "body": "I trained as a Full Stack Developer and complement that technical foundation with UX/UI Design experience. I am interested in building complete digital products: understanding the problem, organizing flows and developing clear, accessible and functional interfaces. My approach combines visual judgment, organization and care for the user experience.",
+    "note": "UX/UI, frontend and backend working together to turn ideas into organized, readable and maintainable digital experiences."
+  },
+  "work": {
+    "eyebrow": "02 / Selected Work",
+    "title": "Selected projects",
+    "description": "A selection of projects where I combine development, interface design and user experience decisions.",
+    "viewDetail": "View detail",
+    "github": "GitHub",
+    "video": "Demo video"
+  },
+  "caseStudies": {
+    "eyebrow": "03 / UX Case Studies",
+    "title": "UX/UI case studies",
+    "description": "Interface and experience explorations focused on clarity, accessibility and simple flows.",
+    "viewDetail": "View case",
+    "behance": "Behance"
+  },
+  "skills": {
+    "eyebrow": "04 / Skills",
+    "title": "Tools and technologies",
+    "description": "Technical and design stack organized by area.",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "uxui": "UX/UI",
+    "tools": "Tools"
+  },
+  "contact": {
+    "eyebrow": "05 / Contact",
+    "title": "Let us talk about clear and functional digital products.",
+    "body": "I am open to opportunities where I can contribute through design and digital product development.",
+    "email": "Send email",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "behance": "Behance",
+    "cv": "CV"
+  },
+  "detail": {
+    "backProjects": "Back to projects",
+    "backCases": "Back to cases",
+    "role": "Role",
+    "technologies": "Technologies",
+    "problem": "Problem",
+    "solution": "Solution",
+    "process": "Process",
+    "screenshots": "Screenshots",
+    "links": "External links",
+    "learnings": "Learnings",
+    "video": "Demo video"
+  },
+  "footer": {
+    "copy": "Designed and developed by Florencia Gutierrez."
+  }
+}

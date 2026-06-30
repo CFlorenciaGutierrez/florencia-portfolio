@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 
 import { Link } from '@/i18n/routing';
+import { Logo } from '@/components/ui/Logo';
 import { LanguageSwitcher } from './LanguageSwitcher';
 
 export function Navbar() {
@@ -25,12 +26,7 @@ export function Navbar() {
         className="section-shell flex min-h-16 items-center justify-between gap-4"
         aria-label={t('aria')}
       >
-        <Link
-          href="/"
-          className="font-mono text-sm font-bold tracking-normal text-cyan-200"
-        >
-          Florencia G.
-        </Link>
+        <Logo />
         <div className="hidden items-center gap-7 md:flex">
           {items.map((item) => (
             <Link

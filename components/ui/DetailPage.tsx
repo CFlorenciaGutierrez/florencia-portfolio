@@ -1,4 +1,11 @@
-import { ArrowLeft, Code2, Palette, PlayCircle } from 'lucide-react';
+import {
+  ArrowLeft,
+  Code2,
+  Globe2,
+  Palette,
+  PenTool,
+  PlayCircle
+} from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 import { ExternalLinkButton } from '@/components/ui/ExternalLinkButton';
@@ -78,21 +85,33 @@ export function DetailPage({ item, locale, variant }: DetailPageProps) {
         </h2>
         <div className="flex flex-wrap gap-3">
           {'github' in item.links && item.links.github ? (
-            <ExternalLinkButton href={item.links.github}>
+            <ExternalLinkButton href={item.links.github} pendingLabel={t('pending')}>
               <Code2 aria-hidden="true" size={16} />
               GitHub
             </ExternalLinkButton>
           ) : null}
+          {item.links.demo ? (
+            <ExternalLinkButton href={item.links.demo} pendingLabel={t('pending')}>
+              <Globe2 aria-hidden="true" size={16} />
+              {t('demo')}
+            </ExternalLinkButton>
+          ) : null}
           {item.links.video ? (
-            <ExternalLinkButton href={item.links.video}>
+            <ExternalLinkButton href={item.links.video} pendingLabel={t('pending')}>
               <PlayCircle aria-hidden="true" size={16} />
               {t('video')}
             </ExternalLinkButton>
           ) : null}
           {item.links.behance ? (
-            <ExternalLinkButton href={item.links.behance}>
+            <ExternalLinkButton href={item.links.behance} pendingLabel={t('pending')}>
               <Palette aria-hidden="true" size={16} />
               Behance
+            </ExternalLinkButton>
+          ) : null}
+          {item.links.prototype ? (
+            <ExternalLinkButton href={item.links.prototype} pendingLabel={t('pending')}>
+              <PenTool aria-hidden="true" size={16} />
+              {t('prototype')}
             </ExternalLinkButton>
           ) : null}
         </div>

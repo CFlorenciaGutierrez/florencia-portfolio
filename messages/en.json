@@ -15,8 +15,7 @@
     "title": "Full Stack Developer & UX/UI Designer",
     "description": "I design and develop digital products by combining user experience, clear interfaces and functional web solutions.",
     "viewProjects": "View projects",
-    "downloadCv": "Download CV",
-    "contact": "Contact me"
+    "contact": "Send email"
   },
   "about": {
     "eyebrow": "01 / About",
@@ -30,14 +29,18 @@
     "description": "A selection of projects where I combine development, interface design and user experience decisions.",
     "viewDetail": "View detail",
     "github": "GitHub",
-    "video": "Demo video"
+    "demo": "Demo",
+    "video": "Demo video",
+    "pending": "Pending"
   },
   "caseStudies": {
     "eyebrow": "03 / UX Case Studies",
     "title": "UX/UI case studies",
     "description": "Interface and experience explorations focused on clarity, accessibility and simple flows.",
     "viewDetail": "View case",
-    "behance": "Behance"
+    "behance": "Behance",
+    "prototype": "Prototype",
+    "pending": "Pending"
   },
   "skills": {
     "eyebrow": "04 / Skills",
@@ -55,8 +58,7 @@
     "email": "Send email",
     "linkedin": "LinkedIn",
     "github": "GitHub",
-    "behance": "Behance",
-    "cv": "CV"
+    "behance": "Behance"
   },
   "detail": {
     "backProjects": "Back to projects",
@@ -69,7 +71,10 @@
     "screenshots": "Screenshots",
     "links": "External links",
     "learnings": "Learnings",
-    "video": "Demo video"
+    "video": "Demo video",
+    "demo": "Demo",
+    "prototype": "Prototype",
+    "pending": "Pending"
   },
   "footer": {
     "copy": "Designed and developed by Florencia Gutierrez."

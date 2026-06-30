@@ -87,43 +87,27 @@ a:not([class*='rounded']):hover {
   box-shadow: 0 24px 70px rgba(2, 6, 23, 0.18);
 }
 
-.custom-cursor-ring,
-.custom-cursor-dot {
+.cursor-ambient-glow {
   pointer-events: none;
   position: fixed;
   left: 0;
   top: 0;
   z-index: 80;
+  height: clamp(300px, 34vw, 500px);
+  width: clamp(300px, 34vw, 500px);
   border-radius: 9999px;
+  background: radial-gradient(
+    circle,
+    rgba(94, 234, 212, 0.14) 0%,
+    rgba(34, 211, 238, 0.09) 24%,
+    rgba(94, 234, 212, 0.045) 46%,
+    rgba(94, 234, 212, 0.018) 64%,
+    transparent 78%
+  );
+  filter: blur(32px);
+  mix-blend-mode: screen;
+  opacity: 0.72;
   translate: -50% -50%;
-}
-
-.custom-cursor-ring {
-  height: 2.75rem;
-  width: 2.75rem;
-  border: 1px solid rgba(94, 234, 212, 0.58);
-  background: rgba(94, 234, 212, 0.04);
-  box-shadow: 0 0 34px rgba(94, 234, 212, 0.14);
-  transition:
-    height 180ms ease,
-    width 180ms ease,
-    border-color 180ms ease,
-    background-color 180ms ease;
-}
-
-.custom-cursor-dot {
-  height: 0.35rem;
-  width: 0.35rem;
-  background: var(--accent);
-}
-
-html[data-custom-cursor] body {
-  cursor: none;
-}
-
-html[data-custom-cursor] a,
-html[data-custom-cursor] button {
-  cursor: none;
 }
 
 .project-list:has(.project-card:hover) .project-card:not(:hover) {
@@ -170,8 +154,7 @@ html[data-custom-cursor] button {
     transition-duration: 0.01ms !important;
   }
 
-  .custom-cursor-ring,
-  .custom-cursor-dot {
+  .cursor-ambient-glow {
     display: none;
   }
 

@@ -15,8 +15,7 @@
     "title": "Full Stack Developer & UX/UI Designer",
     "description": "Diseño y desarrollo productos digitales combinando experiencia de usuario, interfaces claras y soluciones web funcionales.",
     "viewProjects": "Ver proyectos",
-    "downloadCv": "Descargar CV",
-    "contact": "Contactarme"
+    "contact": "Enviar mail"
   },
   "about": {
     "eyebrow": "01 / About",
@@ -30,14 +29,18 @@
     "description": "Una seleccion de proyectos donde combino desarrollo, interfaz y decisiones de experiencia.",
     "viewDetail": "Ver detalle",
     "github": "GitHub",
-    "video": "Video demo"
+    "demo": "Demo",
+    "video": "Video demo",
+    "pending": "Pendiente"
   },
   "caseStudies": {
     "eyebrow": "03 / UX Case Studies",
     "title": "Casos UX/UI",
     "description": "Exploraciones de interfaz y experiencia enfocadas en claridad, accesibilidad y flujos simples.",
     "viewDetail": "Ver caso",
-    "behance": "Behance"
+    "behance": "Behance",
+    "prototype": "Prototipo",
+    "pending": "Pendiente"
   },
   "skills": {
     "eyebrow": "04 / Skills",
@@ -52,11 +55,10 @@
     "eyebrow": "05 / Contact",
     "title": "Hablemos de productos digitales claros y funcionales.",
     "body": "Estoy abierta a oportunidades donde pueda aportar desde el diseno y el desarrollo de productos digitales.",
-    "email": "Enviar email",
+    "email": "Enviar mail",
     "linkedin": "LinkedIn",
     "github": "GitHub",
-    "behance": "Behance",
-    "cv": "CV"
+    "behance": "Behance"
   },
   "detail": {
     "backProjects": "Volver a proyectos",
@@ -64,12 +66,15 @@
     "role": "Rol",
     "technologies": "Tecnologias",
     "problem": "Problema",
-    "solution": "Solucion",
+    "solution": "Solución",
     "process": "Proceso",
     "screenshots": "Screenshots",
     "links": "Links externos",
     "learnings": "Aprendizajes",
-    "video": "Video demo"
+    "video": "Video demo",
+    "demo": "Demo",
+    "prototype": "Prototipo",
+    "pending": "Pendiente"
   },
   "footer": {
     "copy": "Diseñado y desarrollado por Florencia Gutiérrez."

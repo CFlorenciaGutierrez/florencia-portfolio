@@ -5,6 +5,12 @@ export type ExternalLinks = {
   demo?: string;
   video?: string;
   behance?: string;
+  prototype?: string;
+};
+
+export type Screenshot = {
+  src: string;
+  alt: string;
 };
 
 export type DetailContent = {
@@ -22,7 +28,7 @@ export type Project = {
   description: Record<Locale, string>;
   technologies: string[];
   links: ExternalLinks;
-  screenshots: string[];
+  screenshots: Screenshot[];
   details: Record<Locale, DetailContent>;
 };
 
@@ -41,155 +47,202 @@ export const projects: Project[] = [
       'TypeScript',
       'Tailwind CSS',
       'Node.js',
-      'PostgreSQL'
+      'PostgreSQL',
+      'Mercado Pago API'
     ],
     links: {
-      github: 'COMPLETAR_GITHUB_TRACKIFLY',
-      video: 'COMPLETAR_VIDEO_TRACKIFLY'
+      github: 'https://github.com/trackifly-app',
+      demo: 'https://front-tracki-fly.vercel.app/es',
+      video: 'https://youtu.be/xL3FVzq0kAE?si=0OndGlzx4ofKN6u1'
     },
     screenshots: [
-      'COMPLETAR_SCREENSHOTS_TRACKIFLY_1',
-      'COMPLETAR_SCREENSHOTS_TRACKIFLY_2'
+      {
+        src: '/images/projects/trackifly/home-claro.png',
+        alt: 'Pantalla home de Trackifly en modo claro con resumen de envios.'
+      },
+      {
+        src: '/images/projects/trackifly/home-oscuro.png',
+        alt: 'Pantalla home de Trackifly en modo oscuro con panel de seguimiento.'
+      },
+      {
+        src: '/images/projects/trackifly/inicio-de-sesion.png',
+        alt: 'Pantalla de inicio de sesion de Trackifly.'
+      }
     ],
     details: {
-      es: {
-        role: 'Full Stack Developer y UX/UI Designer',
-        problem:
-          'COMPLETAR_DESCRIPCION_PROBLEMA_TRACKIFLY: describir el desafio principal de logistica, trazabilidad o gestion.',
-        solution:
-          'COMPLETAR_DESCRIPCION_SOLUCION_TRACKIFLY: explicar como la plataforma resuelve el seguimiento y ordena la informacion.',
-        process: [
-          'Investigacion de necesidades y flujos principales.',
-          'Definicion de arquitectura, pantallas clave y modelo de datos.',
-          'Implementacion frontend, backend y validacion de la experiencia.'
-        ],
-        learnings: [
-          'Integrar decisiones de UX con una arquitectura full stack.',
-          'Priorizar claridad visual en procesos con muchos estados.'
-        ]
-      },
-      en: {
-        role: 'Full Stack Developer and UX/UI Designer',
-        problem:
-          'COMPLETAR_DESCRIPCION_PROBLEMA_TRACKIFLY: describe the core logistics, traceability or management challenge.',
-        solution:
-          'COMPLETAR_DESCRIPCION_SOLUCION_TRACKIFLY: explain how the platform supports tracking and organizes information.',
-        process: [
-          'Researched needs and core user flows.',
-          'Defined architecture, key screens and data model.',
-          'Implemented frontend, backend and UX validation.'
-        ],
-        learnings: [
-          'Connecting UX decisions with full stack architecture.',
-          'Prioritizing visual clarity in workflows with many states.'
-        ]
-      }
-    }
+  es: {
+    role: 'Full Stack Developer y UX/UI Designer',
+    problem:
+      'La gestión de envíos suele estar fragmentada entre cotización, pagos, seguimiento y administración, dificultando la trazabilidad y la experiencia del usuario.',
+    solution:
+      'TrackiFly centraliza todo el proceso logístico mediante cotizaciones dinámicas, seguimiento en tiempo real, pagos con Mercado Pago y administración por roles en una única plataforma.',
+    process: [
+      'Investigación de necesidades y flujos principales.',
+      'Diseño de interfaces, arquitectura y modelo de datos.',
+      'Implementación Full Stack e iteración de la experiencia de usuario.'
+    ],
+    learnings: [
+      'Integrar decisiones de UX con una arquitectura Full Stack.',
+      'Priorizar claridad visual en flujos con múltiples estados.'
+    ]
+  },
+  en: {
+    role: 'Full Stack Developer and UX/UI Designer',
+    problem:
+      'Shipment management is often fragmented across quoting, payments, tracking, and administration, creating a complex user experience.',
+    solution:
+      'TrackiFly centralizes the logistics workflow with dynamic quotes, real-time tracking, Mercado Pago payments, and role-based management in a single platform.',
+    process: [
+      'Researched user needs and logistics workflows.',
+      'Designed interfaces, architecture, and data model.',
+      'Implemented the full stack solution and refined the user experience.'
+    ],
+    learnings: [
+      'Connecting UX decisions with full stack architecture.',
+      'Prioritizing visual clarity in complex workflows.'
+    ]
+  }
+}
   },
   {
     slug: 'cosmetic-app',
     name: 'Cosmetic App',
-    type: 'Full Stack / Frontend',
+    type: 'Frontend',
     description: {
-      es: 'Aplicacion orientada a productos cosmeticos, con foco en interfaz visual, experiencia de usuario y funcionalidad web.',
-      en: 'Application focused on cosmetic products, visual interface, user experience and web functionality.'
+     es: 'Aplicación e-commerce de cosméticos enfocada en construir una experiencia de compra completa mediante una interfaz responsive e integrada con una API REST.',
+     en: 'Cosmetics e-commerce application focused on delivering a complete shopping experience through a responsive interface integrated with a REST API.'
     },
-    technologies: ['COMPLETAR_TECNOLOGIAS_COSMETIC_APP'],
+    technologies: [
+    'Next.js',
+    'React',
+    'TypeScript',
+    'Tailwind CSS',
+    'Node.js',
+    'Express',
+    'PostgreSQL',
+    'Yup'
+  ],
     links: {
-      github: 'COMPLETAR_GITHUB_COSMETIC_APP',
-      video: 'COMPLETAR_VIDEO_COSMETIC_APP'
+      github: 'https://github.com/CFlorenciaGutierrez/E-commerce-Beauty',
     },
     screenshots: [
-      'COMPLETAR_SCREENSHOTS_COSMETIC_APP_1',
-      'COMPLETAR_SCREENSHOTS_COSMETIC_APP_2'
-    ],
-    details: {
-      es: {
-        role: 'Full Stack / Frontend Developer',
-        problem:
-          'COMPLETAR_DESCRIPCION_PROBLEMA_COSMETIC_APP: describir la necesidad de usuario o negocio.',
-        solution:
-          'COMPLETAR_DESCRIPCION_SOLUCION_COSMETIC_APP: explicar las funcionalidades y decisiones de interfaz.',
-        process: [
-          'Organizacion del contenido y jerarquia visual.',
-          'Construccion de componentes reutilizables.',
-          'Ajustes responsive y revision de usabilidad.'
-        ],
-        learnings: [
-          'Cuidar consistencia visual en catalogos o productos.',
-          'Traducir decisiones de diseno en componentes mantenibles.'
-        ]
+      {
+        src: '/images/projects/cosmetic-app/home.png',
+        alt: 'Pantalla home de Cosmetic App con catalogo de productos.'
       },
-      en: {
-        role: 'Full Stack / Frontend Developer',
-        problem:
-          'COMPLETAR_DESCRIPCION_PROBLEMA_COSMETIC_APP: describe the user or business need.',
-        solution:
-          'COMPLETAR_DESCRIPCION_SOLUCION_COSMETIC_APP: explain features and interface decisions.',
-        process: [
-          'Organized content and visual hierarchy.',
-          'Built reusable components.',
-          'Adjusted responsive behavior and usability.'
-        ],
-        learnings: [
-          'Keeping visual consistency in product experiences.',
-          'Turning design decisions into maintainable components.'
-        ]
+      {
+        src: '/images/projects/cosmetic-app/carrito.png',
+        alt: 'Pantalla de carrito de compras de Cosmetic App.'
+      },
+      {
+        src: '/images/projects/cosmetic-app/perfil.png',
+        alt: 'Pantalla de perfil de usuario de Cosmetic App.'
       }
+    ],
+     details: {
+    es: {
+      role: 'Frontend Developer',
+      problem:
+        'El desafío consistía en desarrollar desde cero el frontend de un e-commerce funcional, consumiendo una API existente e implementando una experiencia de compra completa e intuitiva.',
+      solution:
+        'Se desarrolló una interfaz responsive que permite registro, autenticación, exploración de productos, gestión del carrito, persistencia de sesión y finalización de compras mediante la integración con una API REST.',
+      process: [
+        'Definición de identidad visual e interfaz.',
+        'Construcción de componentes reutilizables y diseño responsive.',
+        'Integración con la API, autenticación y funcionalidades del carrito.'
+      ],
+      learnings: [
+        'Construir una aplicación frontend completa consumiendo una API REST.',
+        'Gestionar estados complejos y persistencia de datos del usuario.',
+        'Desarrollar interfaces reutilizables y escalables.'
+      ]
+    },
+    en: {
+      role: 'Frontend Developer',
+      problem:
+        'The challenge was to build the frontend of a functional e-commerce application from scratch while consuming an existing REST API and providing a complete shopping experience.',
+      solution:
+        'Developed a responsive interface supporting user authentication, product browsing, shopping cart management, session persistence, and checkout through REST API integration.',
+      process: [
+        'Defined the visual identity and user interface.',
+        'Built reusable responsive components.',
+        'Integrated authentication, REST APIs, and shopping cart functionality.'
+      ],
+      learnings: [
+        'Building a complete frontend application powered by a REST API.',
+        'Managing complex application state and user session persistence.',
+        'Creating reusable and scalable UI components.'
+      ]
     }
+  }
   },
   {
     slug: 'medical-app',
     name: 'Medical App',
-    type: 'Full Stack / Frontend',
+    type: 'Full Stack',
     description: {
-      es: 'Aplicacion relacionada al area medica/salud, enfocada en organizacion de informacion, usabilidad y experiencia clara para usuarios.',
-      en: 'Health-related application focused on information organization, usability and a clear user experience.'
+      es: 'Aplicación web para la gestión de turnos médicos, desarrollada de forma Full Stack con autenticación, reserva y administración de citas.',
+    en: 'Full Stack web application for managing medical appointments, featuring authentication, appointment scheduling, and user management.'
     },
-    technologies: ['COMPLETAR_TECNOLOGIAS_MEDICAL_APP'],
+    technologies: [
+    'React',
+    'Vite',
+    'TypeScript',
+    'Tailwind CSS',
+    'Node.js',
+    'Express',
+    'PostgreSQL'
+  ],
     links: {
-      github: 'COMPLETAR_GITHUB_MEDICAL_APP',
-      video: 'COMPLETAR_VIDEO_MEDICAL_APP'
+      github: 'https://github.com/CFlorenciaGutierrez/medical-appointments-app',
     },
     screenshots: [
-      'COMPLETAR_SCREENSHOTS_MEDICAL_APP_1',
-      'COMPLETAR_SCREENSHOTS_MEDICAL_APP_2'
-    ],
-    details: {
-      es: {
-        role: 'Full Stack / Frontend Developer',
-        problem:
-          'COMPLETAR_DESCRIPCION_PROBLEMA_MEDICAL_APP: describir el problema de organizacion, acceso o claridad.',
-        solution:
-          'COMPLETAR_DESCRIPCION_SOLUCION_MEDICAL_APP: explicar como se estructura la informacion y la experiencia.',
-        process: [
-          'Definicion de flujos simples y accesibles.',
-          'Diseno de interfaz orientada a lectura clara.',
-          'Implementacion y pruebas responsive.'
-        ],
-        learnings: [
-          'Disenar con foco en claridad y confianza.',
-          'Reducir friccion en experiencias con informacion sensible.'
-        ]
+      {
+        src: '/images/projects/medical-app/home.png',
+        alt: 'Pantalla home de Medical App con contenido principal de salud.'
       },
-      en: {
-        role: 'Full Stack / Frontend Developer',
-        problem:
-          'COMPLETAR_DESCRIPCION_PROBLEMA_MEDICAL_APP: describe the organization, access or clarity issue.',
-        solution:
-          'COMPLETAR_DESCRIPCION_SOLUCION_MEDICAL_APP: explain how information and experience are structured.',
-        process: [
-          'Defined simple and accessible flows.',
-          'Designed an interface focused on readable information.',
-          'Implemented and tested responsive behavior.'
-        ],
-        learnings: [
-          'Designing with clarity and trust in mind.',
-          'Reducing friction in experiences with sensitive information.'
-        ]
+      {
+        src: '/images/projects/medical-app/registro.png',
+        alt: 'Pantalla de registro de usuario de Medical App.'
       }
+    ],
+     details: {
+    es: {
+      role: 'Full Stack Developer',
+      problem:
+        'Los usuarios necesitaban una forma simple y organizada de registrarse, iniciar sesión y gestionar turnos médicos desde una única plataforma.',
+      solution:
+        'Se desarrolló una aplicación Full Stack que permite autenticación de usuarios, reserva y cancelación de turnos, visualización del historial y validación de disponibilidad mediante una interfaz clara y una API REST.',
+      process: [
+        'Diseño de la arquitectura de la aplicación y modelo de datos.',
+        'Desarrollo del frontend y backend con integración mediante API REST.',
+        'Implementación de autenticación, gestión de turnos y validaciones.'
+      ],
+      learnings: [
+        'Desarrollar una aplicación Full Stack desde cero.',
+        'Diseñar APIs REST e integrar frontend y backend.',
+        'Modelar datos y gestionar reglas de negocio para reservas.'
+      ]
+    },
+    en: {
+      role: 'Full Stack Developer',
+      problem:
+        'Users needed a simple way to register, log in, and manage medical appointments through a single platform.',
+      solution:
+        'Built a Full Stack application that enables user authentication, appointment scheduling, cancellation, appointment history, and availability validation through a REST API and an intuitive interface.',
+      process: [
+        'Designed the application architecture and database model.',
+        'Developed both frontend and backend integrated through a REST API.',
+        'Implemented authentication, appointment management, and business validations.'
+      ],
+      learnings: [
+        'Building a Full Stack application from scratch.',
+        'Designing REST APIs and integrating frontend with backend.',
+        'Modeling data and implementing business rules for appointment scheduling.'
+      ]
     }
   }
+ }
 ];
 
 export function getProject(slug: string) {

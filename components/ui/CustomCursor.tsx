@@ -3,8 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 export function CustomCursor() {
-  const cursorRef = useRef<HTMLDivElement>(null);
-  const dotRef = useRef<HTMLDivElement>(null);
+  const glowRef = useRef<HTMLDivElement>(null);
   const [enabled, setEnabled] = useState(false);
 
   useEffect(() => {
@@ -45,18 +44,14 @@ export function CustomCursor() {
     const move = (event: MouseEvent) => {
       target.x = event.clientX;
       target.y = event.clientY;
-
-      if (dotRef.current) {
-        dotRef.current.style.transform = `translate3d(${target.x}px, ${target.y}px, 0)`;
-      }
     };
 
     const animate = () => {
       current.x += (target.x - current.x) * 0.18;
       current.y += (target.y - current.y) * 0.18;
 
-      if (cursorRef.current) {
-        cursorRef.current.style.transform = `translate3d(${current.x}px, ${current.y}px, 0)`;
+      if (glowRef.current) {
+        glowRef.current.style.transform = `translate3d(${current.x}px, ${current.y}px, 0)`;
       }
 
       frame = window.requestAnimationFrame(animate);
@@ -76,9 +71,6 @@ export function CustomCursor() {
   }
 
   return (
-    <>
-      <div ref={cursorRef} className="custom-cursor-ring" aria-hidden="true" />
-      <div ref={dotRef} className="custom-cursor-dot" aria-hidden="true" />
-    </>
+    <div ref={glowRef} className="cursor-ambient-glow" aria-hidden="true" />
   );
 }

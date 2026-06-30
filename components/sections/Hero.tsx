@@ -1,6 +1,7 @@
-import { ArrowDown, Download, Mail } from 'lucide-react';
+import { ArrowDown, Mail } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
+import { contactLinks, EMAIL_COMPOSE_URL } from '@/data/site';
 import { Link } from '@/i18n/routing';
 
 export function Hero() {
@@ -30,18 +31,23 @@ export function Hero() {
             <ArrowDown aria-hidden="true" size={18} />
           </Link>
           <a
-            href="COMPLETAR_LINK_CV"
-            className="inline-flex items-center justify-center gap-2 rounded-md border border-cyan-300/40 px-5 py-3 text-sm font-bold text-cyan-200 transition hover:bg-cyan-300/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4"
-          >
-            {t('downloadCv')}
-            <Download aria-hidden="true" size={18} />
-          </a>
-          <a
-            href="mailto:florencia.carolina.gutierrez@gmail.com"
+            href={EMAIL_COMPOSE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Abrir Gmail para escribir a Florencia Carolina Gutierrez"
             className="inline-flex items-center justify-center gap-2 rounded-md border border-slate-700 px-5 py-3 text-sm font-bold text-slate-200 transition hover:border-cyan-300/50 hover:text-cyan-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4"
           >
             {t('contact')}
             <Mail aria-hidden="true" size={18} />
+          </a>
+          <a
+            href={EMAIL_COMPOSE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Abrir Gmail para escribir a florencia.carolina.gutierrez@gmail.com"
+            className="inline-flex items-center justify-center text-sm font-semibold text-slate-300 transition hover:text-cyan-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4"
+          >
+            {contactLinks.email}
           </a>
         </div>
       </div>

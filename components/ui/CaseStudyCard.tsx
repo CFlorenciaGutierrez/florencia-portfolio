@@ -1,8 +1,9 @@
-import { ArrowRight, Palette } from 'lucide-react';
+import { ArrowRight, Palette, PenTool } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 import type { CaseStudy } from '@/data/caseStudies';
 import type { Locale } from '@/data/projects';
+import { isPendingLink } from '@/data/site';
 import { Link } from '@/i18n/routing';
 
 type CaseStudyCardProps = {
@@ -40,16 +41,63 @@ export function CaseStudyCard({ caseStudy, locale }: CaseStudyCardProps) {
           {t('viewDetail')}
           <ArrowRight aria-hidden="true" size={16} />
         </Link>
-        {caseStudy.links.behance ? (
-          <a
-            href={caseStudy.links.behance}
-            className="inline-flex items-center gap-2 text-slate-300 transition hover:text-cyan-200"
-          >
-            <Palette aria-hidden="true" size={16} />
-            {t('behance')}
-          </a>
-        ) : null}
+        <CaseStudyLink
+          href={caseStudy.links.behance}
+          label={t('behance')}
+          pendingLabel={t('pending')}
+        >
+          <Palette aria-hidden="true" size={16} />
+        </CaseStudyLink>
+        <CaseStudyLink
+          href={caseStudy.links.prototype}
+          label={t('prototype')}
+          pendingLabel={t('pending')}
+        >
+          <PenTool aria-hidden="true" size={16} />
+        </CaseStudyLink>
       </div>
     </article>
+  );
+}
+
+function CaseStudyLink({
+  href,
+  label,
+  pendingLabel,
+  children
+}: {
+  href?: string;
+  label: string;
+  pendingLabel: string;
+  children: React.ReactNode;
+}) {
+  if (!href) {
+    return null;
+  }
+
+  if (isPendingLink(href)) {
+    return (
+      <span
+        aria-disabled="true"
+        className="inline-flex cursor-not-allowed items-center gap-2 text-slate-500"
+        title={pendingLabel}
+      >
+        {children}
+        {label}
+        <span className="font-mono text-xs">{pendingLabel}</span>
+      </span>
+    );
+  }
+
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      className="inline-flex items-center gap-2 text-slate-300 transition hover:text-cyan-200"
+    >
+      {children}
+      {label}
+    </a>
   );
 }

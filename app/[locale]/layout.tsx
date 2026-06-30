@@ -6,6 +6,7 @@ import { notFound } from 'next/navigation';
 import { Footer } from '@/components/layout/Footer';
 import { Navbar } from '@/components/layout/Navbar';
 import { CustomCursor } from '@/components/ui/CustomCursor';
+import { siteConfig } from '@/data/site';
 import { routing } from '@/i18n/routing';
 import '../globals.css';
 
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
     locale: 'es_AR',
     siteName: 'Florencia Gutierrez Portfolio'
   },
-  metadataBase: new URL('https://completar-dominio.com')
+  metadataBase: new URL(siteConfig.siteUrl)
 };
 
 export function generateStaticParams() {

@@ -1,14 +1,31 @@
 import { ArrowUpRight } from 'lucide-react';
 
+import { isPendingLink } from '@/data/site';
+
 type ExternalLinkButtonProps = {
   href: string;
   children: React.ReactNode;
+  pendingLabel?: string;
 };
 
 export function ExternalLinkButton({
   href,
-  children
+  children,
+  pendingLabel = 'Pendiente'
 }: ExternalLinkButtonProps) {
+  if (isPendingLink(href)) {
+    return (
+      <span
+        aria-disabled="true"
+        className="inline-flex cursor-not-allowed items-center gap-2 rounded-md border border-slate-700/70 px-4 py-2 text-sm font-semibold text-slate-500"
+        title={pendingLabel}
+      >
+        {children}
+        <span className="font-mono text-xs">{pendingLabel}</span>
+      </span>
+    );
+  }
+
   return (
     <a
       href={href}

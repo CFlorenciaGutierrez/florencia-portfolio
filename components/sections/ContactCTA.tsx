@@ -21,7 +21,7 @@ export function ContactCTA() {
             href={EMAIL_COMPOSE_URL}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Abrir Gmail para escribir a Florencia Carolina Gutierrez"
+            aria-label="Abrir Gmail para escribir a Florencia Carolina Gutiérrez"
             className="inline-flex items-center gap-2 rounded-md bg-cyan-300 px-4 py-2 text-sm font-bold text-slate-950 transition hover:bg-cyan-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4"
           >
             <Mail aria-hidden="true" size={16} />
